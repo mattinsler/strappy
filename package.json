@@ -1,19 +1,21 @@
 {
   "author": "Matt Insler <matt.insler@gmail.com>",
   "name": "strappy",
+  "description": "Bootstrapper for node",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "http://github.com/mattinsler/strappy.git"
+    "url": "git://github.com/mattinsler/strappy.git"
   },
   "engines": {
     "node": "*"
   },
   "dependencies": {
     "underscore": "1.1.x",
-    "Class": "x.x.x"
+    "resig-class": "x.x.x"
   },
+  "devDependencies": {},
   "bin": {
-    "strappy", "./bin/strappy"
+    "strappy": "./bin/strappy"
   }
 }
