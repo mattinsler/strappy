@@ -1,0 +1,19 @@
+{
+  "author": "Matt Insler <matt.insler@gmail.com>",
+  "name": "strappy",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mattinsler/strappy.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "underscore": "1.1.x",
+    "Class": "x.x.x"
+  },
+  "bin": {
+    "strappy", "./bin/strappy"
+  }
+}

@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var path = require('path'),
+    fs = require('fs'),
+    sys  = require('sys'),
+    strappy = require('../lib/strappy');
+
+var argv = require('optimist').argv;
+
+function usage() {
+  sys.puts([
+    'usage: strappy [OPTIONS] SCRIPT',
+    '',
+    'options:',
+    '  -c, --config file  Use config file', 
+    '  -h, --help         Show the help'
+  ].join('\n'));
+  process.exit(1);
+}
+
+function error(err) {
+  sys.puts('ERROR: ' + err);
+  usage();
+}
+
+if (argv.h || argv.help) {
+  usage();
+}
+
+argv._.length != 1 && error('Only 1 script can be bootstrapped');
+
+var boot = strappy(argv._[0]);
+if (argv.c || argv.config) {
+  boot.withConfig(argv.c || argv.config);
+}
+return boot.run();
