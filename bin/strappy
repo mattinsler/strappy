@@ -2,13 +2,13 @@
 
 var path = require('path'),
     fs = require('fs'),
-    sys  = require('sys'),
+    util = require('util'),
     strappy = require('../lib/strappy');
 
 var argv = require('optimist').argv;
 
 function usage() {
-  sys.puts([
+  util.puts([
     'usage: strappy [OPTIONS] SCRIPT',
     '',
     'options:',
@@ -19,7 +19,7 @@ function usage() {
 }
 
 function error(err) {
-  sys.puts('ERROR: ' + err);
+  util.puts('ERROR: ' + err);
   usage();
 }
 
